@@ -10,11 +10,11 @@
 		9CD65B781B14269A00B4CE8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B771B14269A00B4CE8A /* main.m */; };
 		9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */; };
 		9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7C1B14269A00B4CE8A /* Ribbit.xcdatamodeld */; };
-		9CD65B811B14269A00B4CE8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B801B14269A00B4CE8A /* ViewController.m */; };
 		9CD65B841B14269A00B4CE8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD65B821B14269A00B4CE8A /* Main.storyboard */; };
 		9CD65B861B14269A00B4CE8A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD65B851B14269A00B4CE8A /* Images.xcassets */; };
 		9CD65B891B14269A00B4CE8A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD65B871B14269A00B4CE8A /* LaunchScreen.xib */; };
 		9CD65B951B14269A00B4CE8A /* RibbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B941B14269A00B4CE8A /* RibbitTests.m */; };
+		9CD65BA01B14327600B4CE8A /* InboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B9F1B14327600B4CE8A /* InboxTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +34,14 @@
 		9CD65B791B14269A00B4CE8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9CD65B7D1B14269A00B4CE8A /* Ribbit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ribbit.xcdatamodel; sourceTree = "<group>"; };
-		9CD65B7F1B14269A00B4CE8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9CD65B801B14269A00B4CE8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9CD65B831B14269A00B4CE8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CD65B851B14269A00B4CE8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9CD65B881B14269A00B4CE8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9CD65B8E1B14269A00B4CE8A /* RibbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RibbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD65B931B14269A00B4CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD65B941B14269A00B4CE8A /* RibbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RibbitTests.m; sourceTree = "<group>"; };
+		9CD65B9E1B14327600B4CE8A /* InboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxTableViewController.h; sourceTree = "<group>"; };
+		9CD65B9F1B14327600B4CE8A /* InboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 			children = (
 				9CD65B791B14269A00B4CE8A /* AppDelegate.h */,
 				9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */,
-				9CD65B7F1B14269A00B4CE8A /* ViewController.h */,
-				9CD65B801B14269A00B4CE8A /* ViewController.m */,
+				9CD65B9E1B14327600B4CE8A /* InboxTableViewController.h */,
+				9CD65B9F1B14327600B4CE8A /* InboxTableViewController.m */,
 				9CD65B821B14269A00B4CE8A /* Main.storyboard */,
 				9CD65B851B14269A00B4CE8A /* Images.xcassets */,
 				9CD65B871B14269A00B4CE8A /* LaunchScreen.xib */,
@@ -222,9 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD65BA01B14327600B4CE8A /* InboxTableViewController.m in Sources */,
 				9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */,
 				9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */,
-				9CD65B811B14269A00B4CE8A /* ViewController.m in Sources */,
 				9CD65B781B14269A00B4CE8A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

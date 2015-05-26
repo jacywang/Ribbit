@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  InboxTableViewController.h
 //  Ribbit
 //
 //  Created by JIAN WANG on 5/25/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface InboxTableViewController : UITableViewController
 
 @end
-
