@@ -28,6 +28,8 @@
 		9CD65BB61B14455300B4CE8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD65BB51B14455300B4CE8A /* SystemConfiguration.framework */; };
 		9CD65BB81B14455F00B4CE8A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD65BB71B14455F00B4CE8A /* libz.dylib */; };
 		9CD65BBA1B14456D00B4CE8A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD65BB91B14456D00B4CE8A /* libsqlite3.dylib */; };
+		9CD65BBD1B14D4B600B4CE8A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65BBC1B14D4B600B4CE8A /* LoginViewController.m */; };
+		9CD65BC01B14D4C400B4CE8A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65BBF1B14D4C400B4CE8A /* SignupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		9CD65BB51B14455300B4CE8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9CD65BB71B14455F00B4CE8A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9CD65BB91B14456D00B4CE8A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		9CD65BBB1B14D4B600B4CE8A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9CD65BBC1B14D4B600B4CE8A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9CD65BBE1B14D4C400B4CE8A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		9CD65BBF1B14D4C400B4CE8A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,10 @@
 				9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */,
 				9CD65B9E1B14327600B4CE8A /* InboxTableViewController.h */,
 				9CD65B9F1B14327600B4CE8A /* InboxTableViewController.m */,
+				9CD65BBB1B14D4B600B4CE8A /* LoginViewController.h */,
+				9CD65BBC1B14D4B600B4CE8A /* LoginViewController.m */,
+				9CD65BBE1B14D4C400B4CE8A /* SignupViewController.h */,
+				9CD65BBF1B14D4C400B4CE8A /* SignupViewController.m */,
 				9CD65B821B14269A00B4CE8A /* Main.storyboard */,
 				9CD65B851B14269A00B4CE8A /* Images.xcassets */,
 				9CD65B871B14269A00B4CE8A /* LaunchScreen.xib */,
@@ -274,10 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD65BC01B14D4C400B4CE8A /* SignupViewController.m in Sources */,
 				9CD65BA01B14327600B4CE8A /* InboxTableViewController.m in Sources */,
 				9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */,
 				9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */,
 				9CD65B781B14269A00B4CE8A /* main.m in Sources */,
+				9CD65BBD1B14D4B600B4CE8A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

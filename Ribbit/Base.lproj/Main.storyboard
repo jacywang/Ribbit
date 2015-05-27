@@ -57,7 +57,7 @@
         <!--Login-->
         <scene sceneID="1cy-4d-uKd">
             <objects>
-                <viewController title="Login" id="Rjg-nK-hWV" sceneMemberID="viewController">
+                <viewController title="Login" id="Rjg-nK-hWV" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fzd-UP-GHd"/>
                         <viewControllerLayoutGuide type="bottom" id="gu4-zJ-tCE"/>
@@ -181,7 +181,7 @@
         <!--Sign Up-->
         <scene sceneID="Odh-37-LGU">
             <objects>
-                <viewController title="Sign Up" id="SPc-24-AP7" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="SPc-24-AP7" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HpM-BH-LtG"/>
                         <viewControllerLayoutGuide type="bottom" id="E1m-03-xCU"/>
@@ -211,6 +211,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonPressed:" destination="SPc-24-AP7" eventType="touchUpInside" id="h9M-1H-PCp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,6 +232,11 @@
                             <constraint firstAttribute="trailing" secondItem="ODd-tg-Scw" secondAttribute="trailing" constant="16" id="vnK-UQ-ufR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ODd-tg-Scw" id="a1T-Qg-sFC"/>
+                        <outlet property="passwordTextField" destination="Zdo-Rh-cQp" id="Id2-Io-Rfn"/>
+                        <outlet property="usernameTextField" destination="Ery-WK-DPR" id="RdG-8e-7NB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ved-dI-n0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
