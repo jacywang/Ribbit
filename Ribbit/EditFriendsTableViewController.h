@@ -1,0 +1,17 @@
+//
+//  EditFriendsTableViewController.h
+//  Ribbit
+//
+//  Created by JIAN WANG on 5/30/15.
+//  Copyright (c) 2015 JWANG. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
+@interface EditFriendsTableViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *allUsers;
+@property (nonatomic, strong) PFUser *currentUser;
+
+@end

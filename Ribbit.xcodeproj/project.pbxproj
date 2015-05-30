@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C286FA91B1A276700B0EFEE /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */; };
 		9CD65B781B14269A00B4CE8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B771B14269A00B4CE8A /* main.m */; };
 		9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */; };
 		9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7C1B14269A00B4CE8A /* Ribbit.xcdatamodeld */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C286FA71B1A276700B0EFEE /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsTableViewController.h; sourceTree = "<group>"; };
+		9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsTableViewController.m; sourceTree = "<group>"; };
 		9CD65B721B14269A00B4CE8A /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD65B761B14269A00B4CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD65B771B14269A00B4CE8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				9CD65BBC1B14D4B600B4CE8A /* LoginViewController.m */,
 				9CD65BBE1B14D4C400B4CE8A /* SignupViewController.h */,
 				9CD65BBF1B14D4C400B4CE8A /* SignupViewController.m */,
+				9C286FA71B1A276700B0EFEE /* EditFriendsTableViewController.h */,
+				9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */,
 				9CD65B821B14269A00B4CE8A /* Main.storyboard */,
 				9CD65B851B14269A00B4CE8A /* Images.xcassets */,
 				9CD65B871B14269A00B4CE8A /* LaunchScreen.xib */,
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C286FA91B1A276700B0EFEE /* EditFriendsTableViewController.m in Sources */,
 				9CD65BC01B14D4C400B4CE8A /* SignupViewController.m in Sources */,
 				9CD65BA01B14327600B4CE8A /* InboxTableViewController.m in Sources */,
 				9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */,
@@ -488,6 +494,7 @@
 				9CD65B9A1B14269A00B4CE8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CD65B9B1B14269A00B4CE8A /* Build configuration list for PBXNativeTarget "RibbitTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +503,7 @@
 				9CD65B9D1B14269A00B4CE8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
