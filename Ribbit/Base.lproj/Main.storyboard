@@ -45,7 +45,13 @@
                             <outlet property="delegate" destination="aBk-fn-1xV" id="Xcm-pl-ZiJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="z8X-pG-28u"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="z8X-pG-28u">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="JEO-Ja-Kvh">
+                            <connections>
+                                <action selector="logout:" destination="aBk-fn-1xV" id="x2X-TU-Y08"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Rjg-nK-hWV" kind="show" identifier="showLogin" id="pez-2h-r2q"/>
                     </connections>
@@ -54,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1450" y="-495"/>
         </scene>
-        <!--Login-->
+        <!--Ribbit-->
         <scene sceneID="1cy-4d-uKd">
             <objects>
-                <viewController title="Login" id="Rjg-nK-hWV" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController title="Ribbit" id="Rjg-nK-hWV" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fzd-UP-GHd"/>
                         <viewControllerLayoutGuide type="bottom" id="gu4-zJ-tCE"/>
@@ -88,6 +94,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="Rjg-nK-hWV" eventType="touchUpInside" id="7Nr-5U-LKz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-Jq-Ju6">
                                 <rect key="frame" x="207" y="214" width="55" height="30"/>
@@ -119,6 +128,10 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="passwordField" destination="bLD-Xa-Rrg" id="bHq-1j-nhy"/>
+                        <outlet property="usernameField" destination="e8n-yf-OKI" id="etl-N3-VfH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfH-aq-BfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="638" y="905"/>
         </scene>
-        <!--Sign Up-->
+        <!--Ribbit-->
         <scene sceneID="Odh-37-LGU">
             <objects>
-                <viewController title="Sign Up" id="SPc-24-AP7" customClass="SignupViewController" sceneMemberID="viewController">
+                <viewController title="Ribbit" id="SPc-24-AP7" customClass="SignupViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HpM-BH-LtG"/>
                         <viewControllerLayoutGuide type="bottom" id="E1m-03-xCU"/>
