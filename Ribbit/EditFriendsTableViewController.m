@@ -30,7 +30,6 @@
     self.currentUser = [PFUser currentUser];
 }
 
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,6 +49,12 @@
     PFUser *user = self.allUsers[indexPath.row];
     cell.textLabel.text = user.username;
     
+    if ([self isFriend:user]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -58,14 +63,43 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    PFUser *user = [self.allUsers objectAtIndex:indexPath.row];
     PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
-    [friendsRelation addObject:[self.allUsers objectAtIndex:indexPath.row]];
+    
+    if ([self isFriend:user]) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+        for (PFUser *friend in self.friends) {
+            if ([friend.objectId isEqualToString:user.objectId]) {
+                [self.friends removeObject:friend];
+                break;
+            }
+        }
+        
+        [friendsRelation removeObject:user];
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.friends addObject:user];
+        [friendsRelation addObject:user];
+    }
+    
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, error.userInfo);
         }
     }];
+}
+
+#pragma mark - Helper method
+
+-(BOOL)isFriend:(PFUser *)user {
+    for (PFUser *friend in self.friends) {
+        if ([friend.objectId isEqualToString:user.objectId]) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 @end

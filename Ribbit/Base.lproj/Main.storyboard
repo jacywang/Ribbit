@@ -140,13 +140,13 @@
         <!--Friends-->
         <scene sceneID="Qbh-qq-0MK">
             <objects>
-                <tableViewController id="g3t-GW-j7j" sceneMemberID="viewController">
+                <tableViewController id="g3t-GW-j7j" customClass="FriendsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GPf-MI-Teb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jLV-MA-s1P">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jLV-MA-s1P">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jLV-MA-s1P" id="Oco-5i-qq7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="aWz-6r-eK9">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="LPZ-HK-NOK">
                             <connections>
-                                <segue destination="au7-rw-0CB" kind="show" identifier="" id="eMA-NZ-Zx1"/>
+                                <segue destination="au7-rw-0CB" kind="show" identifier="showEditFriend" id="eMA-NZ-Zx1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
