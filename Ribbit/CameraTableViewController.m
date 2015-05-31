@@ -126,12 +126,78 @@
 #pragma mark - IBActions
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
-    self.image = nil;
-    self.videoFilePath = nil;
-    [self.recipients removeAllObjects];
+    [self reset];
     [self.tabBarController setSelectedIndex:0];
 }
 
 - (IBAction)sendButtonPressed:(UIBarButtonItem *)sender {
+    if (self.image == nil && self.videoFilePath.length == 0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Try again!" message:@"Please capture or select a photo or video to share!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
+    } else {
+        [self uploadMessage];
+        [self.tabBarController setSelectedIndex:0];
+    }
 }
+
+#pragma mark - Helper methods
+
+- (void)uploadMessage {
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
+    if (self.image != nil) {
+        UIImage *newImage = [self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+        fileData = UIImagePNGRepresentation(newImage);
+        fileName = @"image.png";
+        fileType = @"image";
+    } else {
+        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
+        fileName = @"video.mov";
+        fileType = @"video";
+    }
+    
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        } else {
+            PFObject *message = [PFObject objectWithClassName:@"Message"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientsIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"name"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                } else {
+                    [self reset];
+                }
+            }];
+        }
+    }];
+}
+
+- (void)reset {
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height {
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRect = CGRectMake(0, 0, width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:newRect];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
+
 @end

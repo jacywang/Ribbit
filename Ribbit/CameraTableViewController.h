@@ -20,6 +20,7 @@
 
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)sendButtonPressed:(UIBarButtonItem *)sender;
-
+- (void)uploadMessage;
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height;
 
 @end
