@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.friendsRelation = [[PFUser user] relationForKey:@"friendsRelation"];
+    self.friendsRelation = [[PFUser currentUser] relationForKey:@"friendsRelation"];
     self.recipients = [[NSMutableArray alloc] init];
 }
 
@@ -31,25 +31,27 @@
         if (error) {
             NSLog(@"Error: %@ %@", error, error.userInfo);
         } else {
-            self.friends = objects;
+            self.friends = [NSArray arrayWithArray:objects];
             [self.tableView reloadData];
         }
     }];
     
-    self.imagePicker = [[UIImagePickerController alloc] init];
-    self.imagePicker.allowsEditing = NO;
-    self.imagePicker.videoMaximumDuration = 10;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ) {
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    } else {
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    if (self.image == nil && self.videoFilePath.length == 0) {
+        self.imagePicker = [[UIImagePickerController alloc] init];
+        self.imagePicker.allowsEditing = NO;
+        self.imagePicker.videoMaximumDuration = 10;
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ) {
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        } else {
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        
+        self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
+        
+        self.imagePicker.delegate = self;
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
     }
-    
-    self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
-    
-    self.imagePicker.delegate = self;
-    [self presentViewController:self.imagePicker animated:NO completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -68,6 +70,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFUser *user = self.friends[indexPath.row];
     cell.textLabel.text = user.username;
+    
+    if ([self.recipients containsObject:user.objectId]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -115,5 +123,15 @@
     [self.tabBarController setSelectedIndex:0];
 }
 
+#pragma mark - IBActions
 
+- (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+    [self.tabBarController setSelectedIndex:0];
+}
+
+- (IBAction)sendButtonPressed:(UIBarButtonItem *)sender {
+}
 @end

@@ -18,4 +18,8 @@
 @property (nonatomic, strong) PFRelation *friendsRelation;
 @property (nonatomic, strong) NSMutableArray *recipients;
 
+- (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)sendButtonPressed:(UIBarButtonItem *)sender;
+
+
 @end

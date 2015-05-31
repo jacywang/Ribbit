@@ -218,7 +218,18 @@
                             <outlet property="delegate" destination="jJx-R1-QJq" id="tNW-6V-vKo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipient" id="x1a-pq-v4y"/>
+                    <navigationItem key="navigationItem" title="Recipient" id="x1a-pq-v4y">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Wv7-8m-0P8">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="jJx-R1-QJq" id="8kH-b1-zNg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="5Q0-Iu-Hm4">
+                            <connections>
+                                <action selector="sendButtonPressed:" destination="jJx-R1-QJq" id="XiN-jJ-vAg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GeB-JR-U5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
