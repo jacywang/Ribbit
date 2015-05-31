@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C286FA91B1A276700B0EFEE /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */; };
 		9C286FAC1B1A34FC00B0EFEE /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FAB1B1A34FC00B0EFEE /* FriendsTableViewController.m */; };
+		9C286FAF1B1A898400B0EFEE /* CameraTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FAE1B1A898400B0EFEE /* CameraTableViewController.m */; };
 		9CD65B781B14269A00B4CE8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B771B14269A00B4CE8A /* main.m */; };
 		9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */; };
 		9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7C1B14269A00B4CE8A /* Ribbit.xcdatamodeld */; };
@@ -49,6 +50,8 @@
 		9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsTableViewController.m; sourceTree = "<group>"; };
 		9C286FAA1B1A34FC00B0EFEE /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
 		9C286FAB1B1A34FC00B0EFEE /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
+		9C286FAD1B1A898400B0EFEE /* CameraTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTableViewController.h; sourceTree = "<group>"; };
+		9C286FAE1B1A898400B0EFEE /* CameraTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraTableViewController.m; sourceTree = "<group>"; };
 		9CD65B721B14269A00B4CE8A /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD65B761B14269A00B4CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD65B771B14269A00B4CE8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				9C286FAB1B1A34FC00B0EFEE /* FriendsTableViewController.m */,
 				9C286FA71B1A276700B0EFEE /* EditFriendsTableViewController.h */,
 				9C286FA81B1A276700B0EFEE /* EditFriendsTableViewController.m */,
+				9C286FAD1B1A898400B0EFEE /* CameraTableViewController.h */,
+				9C286FAE1B1A898400B0EFEE /* CameraTableViewController.m */,
 				9CD65B821B14269A00B4CE8A /* Main.storyboard */,
 				9CD65B851B14269A00B4CE8A /* Images.xcassets */,
 				9CD65B871B14269A00B4CE8A /* LaunchScreen.xib */,
@@ -297,6 +302,7 @@
 				9C286FA91B1A276700B0EFEE /* EditFriendsTableViewController.m in Sources */,
 				9C286FAC1B1A34FC00B0EFEE /* FriendsTableViewController.m in Sources */,
 				9CD65BC01B14D4C400B4CE8A /* SignupViewController.m in Sources */,
+				9C286FAF1B1A898400B0EFEE /* CameraTableViewController.m in Sources */,
 				9CD65BA01B14327600B4CE8A /* InboxTableViewController.m in Sources */,
 				9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */,
 				9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */,
@@ -428,6 +434,7 @@
 					"$(PROJECT_DIR)/Ribbit",
 				);
 				INFOPLIST_FILE = Ribbit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -442,6 +449,7 @@
 					"$(PROJECT_DIR)/Ribbit",
 				);
 				INFOPLIST_FILE = Ribbit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
