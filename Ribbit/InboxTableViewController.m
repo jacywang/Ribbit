@@ -9,6 +9,7 @@
 #import "InboxTableViewController.h"
 #import "ImageViewController.h"
 
+
 @interface InboxTableViewController ()
 
 @end
@@ -17,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.moviePlayer = [[MPMoviePlayerController alloc] init];
+    
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         NSLog(@"Current user: %@", currentUser.username);
@@ -95,6 +99,22 @@
     NSString *fileType = [self.selectedMessage objectForKey:@"fileType"];
     if ([fileType isEqualToString:@"image"]) {
         [self performSegueWithIdentifier:@"showImage" sender:self];
+    } else {
+        PFFile *file = [self.selectedMessage objectForKey:@"file"];
+        NSURL *fileUrl = [NSURL URLWithString:file.url];
+        self.moviePlayer.contentURL = fileUrl;
+        [self.moviePlayer prepareToPlay];
+        [self.view addSubview:self.moviePlayer.view];
+        [self.moviePlayer setFullscreen:YES animated:YES];
+    }
+    
+    NSMutableArray *recipientsIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientIds"]];
+    if (recipientsIds.count == 1) {
+        [self.selectedMessage deleteInBackground];
+    } else {
+        [recipientsIds removeObject:[[PFUser currentUser] objectId]];
+        [self.selectedMessage setObject:recipientsIds forKey:@"recipientIds"];
+        [self.selectedMessage saveInBackground];
     }
 }
 

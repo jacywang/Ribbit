@@ -11,6 +11,7 @@
 		9C286FAC1B1A34FC00B0EFEE /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FAB1B1A34FC00B0EFEE /* FriendsTableViewController.m */; };
 		9C286FAF1B1A898400B0EFEE /* CameraTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FAE1B1A898400B0EFEE /* CameraTableViewController.m */; };
 		9C286FB21B1BF46F00B0EFEE /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FB11B1BF46F00B0EFEE /* ImageViewController.m */; };
+		9C286FB41B1C150900B0EFEE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C286FB31B1C150900B0EFEE /* MediaPlayer.framework */; };
 		9CD65B781B14269A00B4CE8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B771B14269A00B4CE8A /* main.m */; };
 		9CD65B7B1B14269A00B4CE8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7A1B14269A00B4CE8A /* AppDelegate.m */; };
 		9CD65B7E1B14269A00B4CE8A /* Ribbit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD65B7C1B14269A00B4CE8A /* Ribbit.xcdatamodeld */; };
@@ -55,6 +56,7 @@
 		9C286FAE1B1A898400B0EFEE /* CameraTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraTableViewController.m; sourceTree = "<group>"; };
 		9C286FB01B1BF46F00B0EFEE /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		9C286FB11B1BF46F00B0EFEE /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		9C286FB31B1C150900B0EFEE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9CD65B721B14269A00B4CE8A /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD65B761B14269A00B4CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CD65B771B14269A00B4CE8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C286FB41B1C150900B0EFEE /* MediaPlayer.framework in Frameworks */,
 				9CD65BBA1B14456D00B4CE8A /* libsqlite3.dylib in Frameworks */,
 				9CD65BB81B14455F00B4CE8A /* libz.dylib in Frameworks */,
 				9CD65BB61B14455300B4CE8A /* SystemConfiguration.framework in Frameworks */,
@@ -170,6 +173,7 @@
 			children = (
 				9CD65BB91B14456D00B4CE8A /* libsqlite3.dylib */,
 				9CD65BB71B14455F00B4CE8A /* libz.dylib */,
+				9C286FB31B1C150900B0EFEE /* MediaPlayer.framework */,
 				9CD65BB51B14455300B4CE8A /* SystemConfiguration.framework */,
 				9CD65BB31B14454600B4CE8A /* StoreKit.framework */,
 				9CD65BB11B14453A00B4CE8A /* Security.framework */,
