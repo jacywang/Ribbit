@@ -25,6 +25,22 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, error.userInfo);
+        } else {
+            self.messages = objects;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
 - (IBAction)logout:(UIBarButtonItem *)sender {
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
@@ -41,23 +57,32 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return self.messages.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    PFObject *message = [self.messages objectAtIndex:indexPath.row];
+    cell.textLabel.text = [message objectForKey:@"senderName"];
+    
+    NSString *fileType = [message objectForKey:@"fileType"];
+    if ([fileType isEqualToString:@"image"]) {
+        cell.imageView.image = [UIImage imageNamed:@"icon_image"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"icon_video"];
+    }
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

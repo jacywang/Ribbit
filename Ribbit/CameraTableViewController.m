@@ -170,7 +170,7 @@
             [message setObject:fileType forKey:@"fileType"];
             [message setObject:self.recipients forKey:@"recipientsIds"];
             [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
-            [message setObject:[[PFUser currentUser] username] forKey:@"name"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
             [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (error) {
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred!" message:@"Please try sending your message again!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
