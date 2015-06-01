@@ -25,6 +25,32 @@
             </objects>
             <point key="canvasLocation" x="-136" y="175"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="9Wa-Ao-sVB">
+            <objects>
+                <viewController id="yGE-Vx-ytw" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jL0-3r-kKY"/>
+                        <viewControllerLayoutGuide type="bottom" id="x26-0U-KMA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jJF-PZ-urI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycF-e2-7gf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ycF-e2-7gf" id="G76-jT-58z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pI-IZ-LIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2110" y="-1193"/>
+        </scene>
         <!--Ribbit-->
         <scene sceneID="YwI-Hv-6vi">
             <objects>
@@ -55,11 +81,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Rjg-nK-hWV" kind="show" identifier="showLogin" id="pez-2h-r2q"/>
+                        <segue destination="yGE-Vx-ytw" kind="show" identifier="showImage" id="GaD-jE-lnB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIm-3Y-L3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450" y="-495"/>
+            <point key="canvasLocation" x="1426" y="-495"/>
         </scene>
         <!--Ribbit-->
         <scene sceneID="1cy-4d-uKd">
