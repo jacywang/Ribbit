@@ -32,17 +32,21 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-    [query orderByDescending:@"createdAt"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, error.userInfo);
-        } else {
-            self.messages = objects;
-            [self.tableView reloadData];
-        }
-    }];
+    if ([[PFUser currentUser] objectId] == nil) {
+        NSLog(@"No objectID");
+    } else {
+        PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+        [query whereKey:@"recipientsIds" equalTo:[[PFUser currentUser] objectId]];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                NSLog(@"Error: %@ %@", error, error.userInfo);
+            } else {
+                self.messages = objects;
+                [self.tableView reloadData];
+            }
+        }];
+    }
 }
 
 - (IBAction)logout:(UIBarButtonItem *)sender {
@@ -108,12 +112,12 @@
         [self.moviePlayer setFullscreen:YES animated:YES];
     }
     
-    NSMutableArray *recipientsIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientIds"]];
+    NSMutableArray *recipientsIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientsIds"]];
     if (recipientsIds.count == 1) {
         [self.selectedMessage deleteInBackground];
     } else {
         [recipientsIds removeObject:[[PFUser currentUser] objectId]];
-        [self.selectedMessage setObject:recipientsIds forKey:@"recipientIds"];
+        [self.selectedMessage setObject:recipientsIds forKey:@"recipientsIds"];
         [self.selectedMessage saveInBackground];
     }
 }
